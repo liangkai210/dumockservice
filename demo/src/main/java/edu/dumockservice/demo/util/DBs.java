@@ -17,7 +17,7 @@ public enum DBs {
     private DB dbInstance = null;
 
     private DBs(String name){
-        String path = Utils.getAbsPath() + "/duDataBase";
+        String path = Utils.getAbsPath() + "duDataBase";
         System.out.println(path);
         this.name = name;
         Options options = new Options().createIfMissing(true);
