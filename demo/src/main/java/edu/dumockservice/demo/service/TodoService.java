@@ -53,6 +53,8 @@ public class TodoService{
                 JSONObject jsonObject = (JSONObject) (new JSONParser().parse(str));
                 jsonObject.put("tempId", tempId);
                 DBs.TODOS.getInstance().put(bytes(tempId), bytes(jsonObject.toString()));
+            }else{
+                return "format error";
             }
             return "success";
         } catch (Exception e) {

@@ -53,6 +53,8 @@ public class AccountService{
                 JSONObject jsonObject = (JSONObject) (new JSONParser().parse(str));
                 jsonObject.put("tempId", tempId);
                 DBs.ACCOUNTBALANCE.getInstance().put(bytes(tempId), bytes(jsonObject.toString()));
+            }else{
+                return "format error";
             }
             return "success";
         } catch (Exception e) {
